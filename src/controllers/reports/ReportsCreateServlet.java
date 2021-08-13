@@ -1,3 +1,11 @@
+
+//「いいね 数」カラム　を追加するために
+//Report.javaの　setLike_countメソッドを使って初期値０を設定した。
+//Report型クラスの r を使っている。
+
+
+
+
 package controllers.reports;
 
 import java.io.IOException;
@@ -57,6 +65,7 @@ public class ReportsCreateServlet extends HttpServlet {
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
+            r.setLike_count(0);
 
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {

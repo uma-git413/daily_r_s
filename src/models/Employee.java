@@ -34,25 +34,25 @@ import javax.persistence.Table;
 public class Employee {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//リソース内での連番
     private Integer id;
 
-    @Column(name = "code", nullable = false, unique = true)
+    @Column(name = "code", nullable = false, unique = true)//社員番号
     private String code;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false)//社員名
     private String name;
 
-    @Column(name = "password", length = 64, nullable = false)
+    @Column(name = "password", length = 64, nullable = false)//システムへのログインパスワード
     private String password;
 
-    @Column(name = "admin_flag", nullable = false)
+    @Column(name = "admin_flag", nullable = false)//権限
     private Integer admin_flag;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at", nullable = false)//登録日時
     private Timestamp created_at;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at", nullable = false)//更新日時
     private Timestamp updated_at;
 
     @Column(name = "delete_flag", nullable = false)
